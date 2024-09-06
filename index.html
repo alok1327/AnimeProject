@@ -3,42 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime E-Commerce</title>
+    <title>My Anime Shop</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <style>
+        body {
+            background-image: url('images\background.jpg'); /* Add anime image in background */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .hidden {
+            display: none;
+        }
+        .about, .contact {
+            padding: 20px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Anime Shop</h1>
+        <h1>My Anime Shop</h1>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about-section">About</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+                <li><a href="#" id="login-link">Login</a></li>
+                <li><a href="#" id="cart-link">Cart (0)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section id="login-section" class="hidden">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <label for="user-login-password">Confirm Password:</label>
+                <input type="password" id="user-login-password" required> <!-- Add user login password field -->
+                <button type="submit">Login</button>
+                <p id="login-message"></p>
+            </form>
+        </section>
+
         <section class="product-list">
             <article class="product">
-                <img src="path/to/your/image1.jpg" alt="Anime Figure 1">
+                <img src="images/image1.jpg" alt="Anime Figure 1">
                 <h2>Anime Figure 1</h2>
                 <p>$19.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </article>
             <article class="product">
-                <img src="path/to/your/image2.jpg" alt="Anime Figure 2">
+                <img src="images/image2.jpg" alt="Anime Figure 2">
                 <h2>Anime Figure 2</h2>
                 <p>$24.99</p>
                 <button class="add-to-cart">Add to Cart</button>
             </article>
             <!-- Add more products here -->
         </section>
+
+        <section id="about-section" class="about">
+            <h2>About Us</h2>
+            <p>Welcome to My Anime Shop, your go-to destination for all things anime! We offer a wide range of high-quality anime figures, posters, and merchandise for fans of all ages. Our mission is to provide anime enthusiasts with unique and collectible items that bring their favorite characters to life.</p>
+            <p>Founded by passionate anime fans, we strive to create a community where fans can find exclusive products and share their love for anime. Thank you for visiting our store and supporting our passion!</p>
+        </section>
+
+        <section id="contact-section" class="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+            <p>Email: <a href="mailto:support@myanimeshop.com">support@myanimeshop.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+            <p>Address: 123 Anime Street, Otakuville, AN 56789</p>
+            <p>Business Hours: Mon-Fri, 9 AM - 6 PM (EST)</p>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Anime Shop. All rights reserved.</p>
+        <p>&copy; 2024 My Anime Shop. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>
