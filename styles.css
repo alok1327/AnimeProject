@@ -1,67 +1,28 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const loginLink = document.getElementById("login-link");
+    const loginSection = document.getElementById("login-section");
+    const loginForm = document.getElementById("login-form");
+    const loginMessage = document.getElementById("login-message");
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
+    loginLink.addEventListener("click", function() {
+        loginSection.classList.toggle("show");
+    });
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("user-login-password").value;
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
+        if (password !== confirmPassword) {
+            loginMessage.textContent = "Passwords do not match";
+            return;
+        }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
+        // Add login functionality here
+        // For example, you can send an AJAX request to a server-side script
+        // to authenticate the user and handle the response accordingly
 
-.product-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
-
-.product {
-    border: 1px solid #ddd;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-.product img {
-    max-width: 100%;
-    height: auto;
-}
-
-button.add-to-cart {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-button.add-to-cart:hover {
-    background-color: #0056b3;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
+        loginMessage.textContent = "Login successful!";
+    });
+});
