@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animeproc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: animeproc
+  template:
+    metadata:
+      labels:
+        app: animeproc
+    spec:
+      containers:
+        - name: animecon
+          image: ded1327/animeimage:latest
+          ports:
+            - containerPort: 9090
