@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: animecon
-          image: ded1327/animeimage:latest
+          image: secloud007/animerepo:animeimage
           ports:
             - containerPort: 9090
